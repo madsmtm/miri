@@ -33,7 +33,23 @@ export CARGO_UNSTABLE_BUILD_DIR_NEW_LAYOUT=true
 # Determine configuration for installed build (used by test-cargo-miri and `./miri bench`).
 # We use the default set of features for this.
 echo "Installing release version of Miri"
-time ./miri install
+time ./miri install -vv
+
+endgroup
+
+begingroup "stderr"
+
+cat target/*/build/*/*/run/stderr
+
+endgroup
+
+begingroup "stdout"
+
+cat target/*/build/*/*/run/stdout
+
+endgroup
+
+exit 1
 
 # Prepare debug build for direct `./miri` invocations.
 # Here we enable some more features and checks.
