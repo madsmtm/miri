@@ -71,6 +71,16 @@ jobs:
         if: ${{ !matrix.qemu }}
         run: ./ci/ci.sh
 
+      - run: cat target/release/build/libffi-sys/*/run/fingerprint/*.json
+
+      - run: cat target/release/build/libffi-sys/*/run/stderr
+
+      - run: cat target/release/build/libffi-sys/*/run/stderr
+
+      - run: cat target/release/build/libffi-sys/*/out/libffi-build/Makefile
+
+      - run: cat target/release/build/libffi-sys/*/out/libffi-build/aarch64-apple-darwin/include/Makefile
+
       - name: Enable SSH
         uses: mxschmitt/action-tmate@v3
 
