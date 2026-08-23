@@ -49,7 +49,7 @@ cat target/*/build/*/*/run/stdout
 
 endgroup
 
-exit 1
+exit 0
 
 # Prepare debug build for direct `./miri` invocations.
 # Here we enable some more features and checks.

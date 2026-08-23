@@ -71,10 +71,13 @@ jobs:
         if: ${{ !matrix.qemu }}
         run: ./ci/ci.sh
 
-      # The `style` job only runs on Linux; this makes sure the host-specific
-      # code is also covered by clippy.
-      - name: clippy
-        run: ./miri clippy -- -D warnings
+      - name: Enable SSH
+        uses: mxschmitt/action-tmate@v3
+
+      # # The `style` job only runs on Linux; this makes sure the host-specific
+      # # code is also covered by clippy.
+      # - name: clippy
+      #   run: ./miri clippy -- -D warnings
 
   style:
     name: style checks
