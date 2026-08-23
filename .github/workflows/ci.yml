@@ -4,6 +4,8 @@ on:
   merge_group:
   pull_request:
     branches:
+      - 'master'
+      - 'macos-fix'
   schedule:
     - cron: '14 4 * * *' # At 4:14 UTC every day.
 
